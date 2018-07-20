@@ -1,6 +1,6 @@
 {
   "name": "@59naga/weppy",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/weppy.js",
   "description": "tweaks antimatter15/weppy to UMD",
   "scripts": {
