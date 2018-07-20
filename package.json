@@ -1,0 +1,26 @@
+{
+  "name": "@59naga/weppy",
+  "version": "0.0.0",
+  "main": "weppy.js",
+  "description": "tweaks antimatter15/weppy to UMD",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier weppy.js --write"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/59naga/weppy.git"
+  },
+  "author": "59naga <i59naga@icloud.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/59naga/weppy/issues"
+  },
+  "homepage": "https://github.com/59naga/weppy#readme",
+  "devDependencies": {
+    "prettier": "^1.13.7"
+  }
+}
