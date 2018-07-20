@@ -286,26 +286,27 @@ var WebP = (function(){
   
   var supportsWebP = 0; //0 = UNKNOWN. 1 = YAY. -1 = BOO.
   var supportsCallback = function(){};
-  
-  var Tester = new Image();
-  Tester.onload = function(){
-    if(Tester.width == 4 && Tester.height == 4){
-      supportsWebP = 1;
-    }else{ 
-      supportsWebP = -1;
-    }
-    supportsCallback();
-  }
-  
-  Tester.onerror = function(){
-    supportsWebP = -1;
-    supportsCallback();
-  }
-  var WebPTest = 'UklGRkYAAABXRUJQVlA4IDoAAABwAgCdASoEAAQAAYcIhYWIhYSIiQIADAzdrBLeABAAAAEAAAEAAPKn5Nn/0v8//Zxn/6H3QAAAAAA=';
-                  //Sample 4x4 black and white WebP image.
-  Tester.src = 'data:image/webp;base64,' + WebPTest;
-  
 
+  if(typeof Image !== "undefined"){
+    var Tester = new Image();
+    Tester.onload = function(){
+      if(Tester.width == 4 && Tester.height == 4){
+        supportsWebP = 1;
+      }else{ 
+        supportsWebP = -1;
+      }
+      supportsCallback();
+    }
+    
+    Tester.onerror = function(){
+      supportsWebP = -1;
+      supportsCallback();
+    }
+    var WebPTest = 'UklGRkYAAABXRUJQVlA4IDoAAABwAgCdASoEAAQAAYcIhYWIhYSIiQIADAzdrBLeABAAAAEAAAEAAPKn5Nn/0v8//Zxn/6H3QAAAAAA=';
+                    //Sample 4x4 black and white WebP image.
+    Tester.src = 'data:image/webp;base64,' + WebPTest;
+  }
+  
   function renderWebP(url, callback){
     //TODO: find out if a browser supports WebP. Currently none do, so how does one test this?
   
@@ -391,7 +392,7 @@ var WebP = (function(){
 
 
 
-  if(document && document.addEventListener){
+  if(typeof document !== 'undefined' && document.addEventListener){
     document.addEventListener("DOMContentLoaded", function(){
       supportsCallback = function(){
         if(supportsWebP == -1 && WebP.auto == true){ //only do it once youre certain that the browser does not support it
