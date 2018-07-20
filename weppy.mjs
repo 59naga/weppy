@@ -285,8 +285,7 @@ export function toDataURL(webm) {
 export function canPlayWebM() {
   var v = document.createElement('video');
   return !!(
-    v.canPlayType &&
-    v.canPlayType('video/webm; codecs="vp8"').replace(/no/, '')
+    v.canPlayType && v.canPlayType('video/webm; codecs="vp8"').replace(/no/, '')
   );
 }
 
@@ -406,12 +405,13 @@ export function processImages(callback) {
   }
 }
 
+export var auto = true;
 if (typeof document !== 'undefined' && document.addEventListener) {
   document.addEventListener(
     'DOMContentLoaded',
     function() {
       supportsCallback = function() {
-        if (supportsWebP == -1 && WebP.auto == true) {
+        if (supportsWebP == -1 && auto == true) {
           //only do it once youre certain that the browser does not support it
           //and make sure that auto is still true
           if (checkWebM()) {

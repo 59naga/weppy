@@ -5,8 +5,8 @@
   "description": "tweaks antimatter15/weppy to UMD",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel weppy.mjs --out-dir dist --plugins=@babel/transform-modules-umd",
-    "format": "prettier weppy.mjs --write"
+    "format": "prettier weppy.mjs --write",
+    "build": "babel weppy.mjs --out-dir dist --plugins=@babel/transform-modules-umd"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.54",
