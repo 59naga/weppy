@@ -1,26 +1,21 @@
 {
+  "private": true,
   "name": "@59naga/weppy",
   "version": "0.0.0",
-  "main": "weppy.js",
+  "main": "dist/weppy.js",
   "description": "tweaks antimatter15/weppy to UMD",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel weppy.mjs --out-dir dist --plugins=@babel/transform-modules-umd",
     "format": "prettier weppy.js --write"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.54",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-transform-modules-umd": "^7.0.0-beta.54",
+    "prettier": "^1.13.7"
   },
   "prettier": {
     "singleQuote": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/59naga/weppy.git"
-  },
-  "author": "59naga <i59naga@icloud.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/59naga/weppy/issues"
-  },
-  "homepage": "https://github.com/59naga/weppy#readme",
-  "devDependencies": {
-    "prettier": "^1.13.7"
   }
 }
