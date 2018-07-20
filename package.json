@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "babel weppy.mjs --out-dir dist --plugins=@babel/transform-modules-umd",
-    "format": "prettier weppy.js --write"
+    "format": "prettier weppy.mjs --write"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.54",
