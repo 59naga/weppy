@@ -27,6 +27,7 @@
   _exports.checkWebM = checkWebM;
   _exports.renderImage = renderImage;
   _exports.processImages = processImages;
+  _exports.auto = void 0;
 
   /*
     Copyright (c) 2010 antimatter15 (antimatter15@gmail.com)
@@ -384,10 +385,13 @@
     }
   }
 
+  var auto = true;
+  _exports.auto = auto;
+
   if (typeof document !== 'undefined' && document.addEventListener) {
     document.addEventListener('DOMContentLoaded', function () {
       supportsCallback = function () {
-        if (supportsWebP == -1 && WebP.auto == true) {
+        if (supportsWebP == -1 && auto == true) {
           //only do it once youre certain that the browser does not support it
           //and make sure that auto is still true
           if (checkWebM()) {
